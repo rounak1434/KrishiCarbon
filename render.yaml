@@ -1,0 +1,52 @@
+services:
+  # =====================================================================
+  # KrishiCarbon Backend Web Service (Node.js / Express / Prisma)
+  # =====================================================================
+  - type: web
+    name: krishicarbon-backend
+    runtime: node
+    rootDir: agricred-backend
+    plan: free
+    buildCommand: npm install && npm run build && npx prisma migrate deploy
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false # Set to Supabase pooled connection string
+      - key: JWT_SECRET
+        generateValue: true # Render automatically generates a 256-bit secure secret
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        sync: false # Set to frontend Render URL, e.g. https://krishicarbon-frontend.onrender.com
+      - key: STORAGE_PROVIDER
+        value: cloudinary
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false # Cloudinary cloud name
+      - key: CLOUDINARY_API_KEY
+        sync: false # Cloudinary API key
+      - key: CLOUDINARY_API_SECRET
+        sync: false # Cloudinary API secret
+      - key: CLOUDINARY_FOLDER
+        value: krishicarbon_documents
+      - key: AI_API_KEY
+        sync: false # Optional Gemini / OpenAI API key
+
+  # =====================================================================
+  # KrishiCarbon Frontend Static Site (HTML5 / CSS / Vanilla JS / Vite)
+  # =====================================================================
+  - type: static
+    name: krishicarbon-frontend
+    rootDir: KrishiCarbon
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_BASE_URL
+        sync: false # Set to backend URL, e.g. https://krishicarbon-backend.onrender.com/api

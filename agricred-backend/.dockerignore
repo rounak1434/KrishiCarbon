@@ -1,0 +1,10 @@
+node_modules
+dist
+uploads
+.env
+.git
+.agents
+.claude
+.cursor
+.devin
+*.log

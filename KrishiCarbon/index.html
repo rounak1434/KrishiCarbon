@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiCarbon — Farmer Carbon Credit Readiness Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <div class="container header-inner">
+      <div class="logo-group">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="6" fill="#1a5c2e"/>
+            <path d="M16 6c-2 4-6 6-6 10a6 6 0 0 0 12 0c0-4-4-6-6-10z" fill="#4caf50" opacity="0.8"/>
+            <path d="M16 10c-1.2 2.4-3.6 3.6-3.6 6a3.6 3.6 0 0 0 7.2 0c0-2.4-2.4-3.6-3.6-6z" fill="#fff" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">KrishiCarbon</span>
+          <span class="logo-sub">Farmer Carbon Credit Readiness Platform</span>
+        </div>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#how-it-works" class="nav-link" data-section="how-it-works">How It Works</a>
+        <a href="#assessment" class="nav-link" data-section="assessment">Assessment</a>
+        <a href="#admin-section" class="nav-link" id="adminNavLink" style="display:none;" data-section="admin-section">Admin</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+      </nav>
+      <div class="user-nav-group" id="headerAuthArea">
+        <button class="btn btn-outline" id="openAuthModalBtn">Sign In</button>
+        <button class="btn btn-primary header-cta" data-goto="assessment">Start Assessment</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="page-section active">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">Agricultural Readiness Tool</div>
+          <h1>Check Your Readiness for Carbon Credit Programs</h1>
+          <p class="hero-desc">Understand how prepared your farm is for carbon-credit participation and discover the steps, records, and practices you may need to improve.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" data-goto="assessment">Start Assessment</button>
+            <button class="btn btn-outline btn-lg" data-goto="how-it-works">How It Works</button>
+          </div>
+          <p class="hero-disclaimer">This is a readiness assessment tool. It does not issue carbon credits or guarantee eligibility.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-illustration">
+            <svg viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="180" width="280" height="60" rx="8" fill="#e8f5e9"/>
+              <rect x="40" y="160" width="60" height="40" rx="4" fill="#c8e6c9"/>
+              <rect x="130" y="140" width="60" height="60" rx="4" fill="#a5d6a7"/>
+              <rect x="220" y="150" width="60" height="50" rx="4" fill="#c8e6c9"/>
+              <circle cx="70" cy="140" r="20" fill="#66bb6a" opacity="0.6"/>
+              <circle cx="160" cy="115" r="25" fill="#43a047" opacity="0.5"/>
+              <circle cx="250" cy="125" r="22" fill="#66bb6a" opacity="0.6"/>
+              <path d="M160 70 L160 115" stroke="#2e7d32" stroke-width="2"/>
+              <path d="M145 90 L160 70 L175 90" stroke="#2e7d32" stroke-width="2" fill="none"/>
+              <text x="160" y="220" text-anchor="middle" fill="#2e7d32" font-size="14" font-family="Inter, sans-serif" font-weight="600">Farm Assessment</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What does this platform do? -->
+    <div class="section-block">
+      <div class="container">
+        <h2 class="section-title">What does this platform do?</h2>
+        <p class="section-subtitle">A simple three-step process to understand your carbon credit readiness.</p>
+        <div class="card-grid three-col">
+          <div class="info-card">
+            <div class="info-card-num">1</div>
+            <h3>Assess</h3>
+            <p>Enter information about your farm, crops, practices and records.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-num">2</div>
+            <h3>Identify</h3>
+            <p>Understand your current readiness and identify missing information.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-num">3</div>
+            <h3>Improve</h3>
+            <p>Get practical recommendations for your next steps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Assess -->
+    <div class="section-block bg-light">
+      <div class="container">
+        <h2 class="section-title">What We Assess</h2>
+        <p class="section-subtitle">We evaluate six key areas that carbon credit programs typically consider.</p>
+        <div class="card-grid three-col">
+          <div class="assess-card">
+            <div class="assess-icon">🌾</div>
+            <h3>Farm &amp; Land</h3>
+            <p>Location, size, ownership and land-use details of your farm.</p>
+          </div>
+          <div class="assess-card">
+            <div class="assess-icon">🌱</div>
+            <h3>Crops &amp; History</h3>
+            <p>Crop types, rotation patterns, cover crops and residue management.</p>
+          </div>
+          <div class="assess-card">
+            <div class="assess-icon">🚜</div>
+            <h3>Farming Practices</h3>
+            <p>Tillage methods, organic practices, agroforestry and intercropping.</p>
+          </div>
+          <div class="assess-card">
+            <div class="assess-icon">🧪</div>
+            <h3>Fertilizer &amp; Inputs</h3>
+            <p>Chemical and organic fertilizer usage, pesticides and bio-inputs.</p>
+          </div>
+          <div class="assess-card">
+            <div class="assess-icon">💧</div>
+            <h3>Irrigation</h3>
+            <p>Water sources, irrigation methods and water conservation practices.</p>
+          </div>
+          <div class="assess-card">
+            <div class="assess-icon">📋</div>
+            <h3>Records &amp; Documents</h3>
+            <p>Available land records, crop logs, soil reports and financial records.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Important Notice -->
+    <div class="section-block">
+      <div class="container">
+        <div class="notice-box">
+          <div class="notice-icon">ℹ️</div>
+          <div class="notice-content">
+            <h3>Important Notice</h3>
+            <p>This platform provides a <strong>readiness assessment only</strong>. It does not issue carbon credits, guarantee eligibility for any program, calculate guaranteed income, or promise financial returns. Results are indicative and meant to help you prepare for carbon credit program applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="page-section">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Complete a simple assessment to understand your carbon credit readiness.</p>
+
+      <div class="steps-timeline">
+        <div class="step-item">
+          <div class="step-marker">1</div>
+          <div class="step-content">
+            <h3>Enter Farm Information</h3>
+            <p>Provide basic details about your farm — location, size, ownership and land use. This helps establish the baseline for assessment.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">2</div>
+          <div class="step-content">
+            <h3>Describe Your Crops</h3>
+            <p>Tell us about the crops you grow, your rotation practices, cover crop usage and how you manage crop residues.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">3</div>
+          <div class="step-content">
+            <h3>Share Farming Practices</h3>
+            <p>Describe your tillage methods, whether you practise organic farming, agroforestry or intercropping.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">4</div>
+          <div class="step-content">
+            <h3>Input &amp; Fertilizer Details</h3>
+            <p>Share details about your fertilizer usage — chemical, organic, bio-fertilizers — and pesticide levels.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">5</div>
+          <div class="step-content">
+            <h3>Irrigation Information</h3>
+            <p>Tell us about your water sources, irrigation type and any water-conservation measures you use.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">6</div>
+          <div class="step-content">
+            <h3>Soil Management</h3>
+            <p>Share whether you do soil testing, use compost, practise mulching and maintain soil health records.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker">7</div>
+          <div class="step-content">
+            <h3>Records &amp; Documentation</h3>
+            <p>Tell us what records and documents you currently maintain — land papers, crop logs, purchase receipts, yield data.</p>
+          </div>
+        </div>
+        <div class="step-item step-final">
+          <div class="step-marker">✓</div>
+          <div class="step-content">
+            <h3>Receive Your Readiness Report</h3>
+            <p>Get your Carbon Credit Readiness Score, strengths, gaps, and actionable recommendations to improve.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-lg">
+        <button class="btn btn-primary btn-lg" data-goto="assessment">Start Your Assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ASSESSMENT ========== -->
+  <section id="assessment" class="page-section">
+    <div class="container">
+      <div class="assessment-header">
+        <h2 class="section-title">Carbon Credit Readiness Assessment</h2>
+        <p class="section-subtitle">Complete all seven sections below. Your responses will be used to generate a readiness report.</p>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div class="progress-steps">
+          <div class="progress-step active" data-step="1"><span>1</span><label>Farm</label></div>
+          <div class="progress-step" data-step="2"><span>2</span><label>Crops</label></div>
+          <div class="progress-step" data-step="3"><span>3</span><label>Practices</label></div>
+          <div class="progress-step" data-step="4"><span>4</span><label>Inputs</label></div>
+          <div class="progress-step" data-step="5"><span>5</span><label>Irrigation</label></div>
+          <div class="progress-step" data-step="6"><span>6</span><label>Soil</label></div>
+          <div class="progress-step" data-step="7"><span>7</span><label>Records</label></div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <form id="assessmentForm" novalidate>
+        <!-- Step 1: Farm & Land -->
+        <div class="form-step active" data-step="1">
+          <div class="form-step-header">
+            <h3>Step 1: Farm &amp; Land Information</h3>
+            <p>Provide basic details about your farm.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="farmName">Farm / Farmer Name <span class="req">*</span></label>
+              <input type="text" id="farmName" name="farmName" placeholder="Enter your name or farm name" required>
+            </div>
+            <div class="form-group">
+              <label for="state">State <span class="req">*</span></label>
+              <select id="state" name="state" required>
+                <option value="">Select State</option>
+                <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+                <option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option>
+                <option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option>
+                <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+                <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+                <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
+                <option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+                <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
+                <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="district">District <span class="req">*</span></label>
+              <input type="text" id="district" name="district" placeholder="Enter your district" required>
+            </div>
+            <div class="form-group">
+              <label for="farmArea">Total Farm Area <span class="req">*</span></label>
+              <div class="input-with-unit">
+                <input type="number" id="farmArea" name="farmArea" placeholder="e.g. 5" min="0" step="0.1" required>
+                <select id="areaUnit" name="areaUnit">
+                  <option value="acres">Acres</option>
+                  <option value="hectares">Hectares</option>
+                  <option value="bigha">Bigha</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ownership">Land Ownership <span class="req">*</span></label>
+              <select id="ownership" name="ownership" required>
+                <option value="">Select</option>
+                <option value="owned">Owned</option>
+                <option value="leased">Leased</option>
+                <option value="shared">Shared / Community</option>
+                <option value="govt">Government Allotted</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="farmingYears">Years of Farming Experience</label>
+              <select id="farmingYears" name="farmingYears">
+                <option value="">Select</option>
+                <option value="0-2">0–2 years</option>
+                <option value="3-5">3–5 years</option>
+                <option value="6-10">6–10 years</option>
+                <option value="11-20">11–20 years</option>
+                <option value="20+">More than 20 years</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Crops & History -->
+        <div class="form-step" data-step="2">
+          <div class="form-step-header">
+            <h3>Step 2: Crops &amp; Crop History</h3>
+            <p>Tell us about what you grow and your crop management practices.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label>Primary Crops Grown <span class="req">*</span></label>
+              <div class="checkbox-grid">
+                <label class="check-label"><input type="checkbox" name="crops" value="rice"> Rice (धान)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="wheat"> Wheat (गेहूँ)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="maize"> Maize (मक्का)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="cotton"> Cotton (कपास)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="sugarcane"> Sugarcane (गन्ना)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="pulses"> Pulses (दालें)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="oilseeds"> Oilseeds (तिलहन)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="vegetables"> Vegetables (सब्जियाँ)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="fruits"> Fruits (फल)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="spices"> Spices (मसाले)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="millets"> Millets (बाजरा)</label>
+                <label class="check-label"><input type="checkbox" name="crops" value="other"> Other</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cropRotation">Do you practise crop rotation? <span class="req">*</span></label>
+              <select id="cropRotation" name="cropRotation" required>
+                <option value="">Select</option>
+                <option value="yes_regular">Yes, regularly every season</option>
+                <option value="yes_occasional">Yes, occasionally</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="coverCrops">Do you grow cover crops?</label>
+              <select id="coverCrops" name="coverCrops">
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="sometimes">Sometimes</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure what cover crops are</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="residueMgmt">How do you manage crop residues? <span class="req">*</span></label>
+              <select id="residueMgmt" name="residueMgmt" required>
+                <option value="">Select</option>
+                <option value="incorporate">Incorporate into soil</option>
+                <option value="mulch">Use as mulch</option>
+                <option value="compost">Compost</option>
+                <option value="burn">Burn in the field</option>
+                <option value="remove">Remove from field</option>
+                <option value="mixed">Mix of methods</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Farming Practices -->
+        <div class="form-step" data-step="3">
+          <div class="form-step-header">
+            <h3>Step 3: Farming Practices</h3>
+            <p>Describe the agricultural methods you follow.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="tillage">Tillage Practice <span class="req">*</span></label>
+              <select id="tillage" name="tillage" required>
+                <option value="">Select</option>
+                <option value="no_till">No-till / Zero tillage</option>
+                <option value="reduced">Reduced / Minimum tillage</option>
+                <option value="conventional">Conventional tillage (full ploughing)</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="organicFarming">Do you practise organic farming?</label>
+              <select id="organicFarming" name="organicFarming">
+                <option value="">Select</option>
+                <option value="certified">Yes, certified organic</option>
+                <option value="practising">Yes, but not certified</option>
+                <option value="partial">Partially organic</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="agroforestry">Do you practise agroforestry?</label>
+              <select id="agroforestry" name="agroforestry">
+                <option value="">Select</option>
+                <option value="yes">Yes, trees are integrated with crops</option>
+                <option value="some">Some trees on farm boundaries</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="intercropping">Do you practise intercropping?</label>
+              <select id="intercropping" name="intercropping">
+                <option value="">Select</option>
+                <option value="yes_regular">Yes, regularly</option>
+                <option value="sometimes">Sometimes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="livestock">Do you integrate livestock with farming?</label>
+              <select id="livestock" name="livestock">
+                <option value="">Select</option>
+                <option value="yes_integrated">Yes, integrated with crop farming</option>
+                <option value="yes_separate">Yes, but separately managed</option>
+                <option value="no">No livestock</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="energySource">Primary energy source on farm</label>
+              <select id="energySource" name="energySource">
+                <option value="">Select</option>
+                <option value="solar">Solar</option>
+                <option value="electric_grid">Electric grid</option>
+                <option value="diesel">Diesel / Petrol</option>
+                <option value="biogas">Biogas</option>
+                <option value="mixed">Mixed sources</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Fertilizer & Inputs -->
+        <div class="form-step" data-step="4">
+          <div class="form-step-header">
+            <h3>Step 4: Fertilizer &amp; Input Usage</h3>
+            <p>Share details about your fertilizer and input practices.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fertilizerCategory">Fertilizer Management <span class="req">*</span></label>
+              <select id="fertilizerCategory" name="fertilizerCategory" required>
+                <option value="">Select Management Type</option>
+                <option value="ORGANIC">Organic</option>
+                <option value="SYNTHETIC">Synthetic</option>
+                <option value="INTEGRATED">Integrated</option>
+              </select>
+            </div>
+            <div class="form-group" id="organicTypeContainer" style="display: none;">
+              <label for="organicFertilizerType">Organic Fertilizer Type</label>
+              <select id="organicFertilizerType" name="organicFertilizerType">
+                <option value="">Select Organic Type (Optional)</option>
+                <option value="COMPOST">Compost</option>
+                <option value="FARMYARD_MANURE">Farmyard Manure (FYM)</option>
+                <option value="VERMICOMPOST">Vermicompost</option>
+                <option value="BIOFERTILIZER">Biofertilizer</option>
+                <option value="GREEN_MANURE">Green Manure</option>
+                <option value="OTHER">Other Organic Fertilizer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="chemFertilizer">Chemical fertilizer usage <span class="req">*</span></label>
+              <select id="chemFertilizer" name="chemFertilizer" required>
+                <option value="">Select</option>
+                <option value="heavy">Heavy / High usage</option>
+                <option value="moderate">Moderate usage</option>
+                <option value="low">Low / Minimal usage</option>
+                <option value="none">No chemical fertilizers</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="organicManure">Organic manure / compost usage</label>
+              <select id="organicManure" name="organicManure">
+                <option value="">Select</option>
+                <option value="primary">Primary source of nutrition</option>
+                <option value="regular">Used regularly along with chemicals</option>
+                <option value="occasional">Used occasionally</option>
+                <option value="none">Not used</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pesticide">Pesticide usage level <span class="req">*</span></label>
+              <select id="pesticide" name="pesticide" required>
+                <option value="">Select</option>
+                <option value="heavy">Heavy / Frequent spraying</option>
+                <option value="moderate">Moderate / As needed</option>
+                <option value="ipm">Integrated Pest Management (IPM)</option>
+                <option value="organic_only">Organic pest control only</option>
+                <option value="none">No pesticides</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bioFertilizer">Do you use bio-fertilizers?</label>
+              <select id="bioFertilizer" name="bioFertilizer">
+                <option value="">Select</option>
+                <option value="yes_regular">Yes, regularly</option>
+                <option value="sometimes">Sometimes</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure what bio-fertilizers are</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="soilAmendments">Do you use any soil amendments? (lime, gypsum, etc.)</label>
+              <select id="soilAmendments" name="soilAmendments">
+                <option value="">Select</option>
+                <option value="yes_based_on_test">Yes, based on soil test recommendations</option>
+                <option value="yes_general">Yes, general application</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputRecords">Do you track quantities of inputs used?</label>
+              <select id="inputRecords" name="inputRecords">
+                <option value="">Select</option>
+                <option value="detailed">Yes, detailed records</option>
+                <option value="rough">Rough estimates</option>
+                <option value="no">No tracking</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Irrigation -->
+        <div class="form-step" data-step="5">
+          <div class="form-step-header">
+            <h3>Step 5: Irrigation</h3>
+            <p>Tell us about your water management practices.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="irrigationType">Primary irrigation method <span class="req">*</span></label>
+              <select id="irrigationType" name="irrigationType" required>
+                <option value="">Select</option>
+                <option value="drip">Drip irrigation</option>
+                <option value="sprinkler">Sprinkler irrigation</option>
+                <option value="flood">Flood / Surface irrigation</option>
+                <option value="canal">Canal irrigation</option>
+                <option value="rainfed">Rainfed only (no irrigation)</option>
+                <option value="mixed">Mixed methods</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="waterSource">Primary water source</label>
+              <select id="waterSource" name="waterSource">
+                <option value="">Select</option>
+                <option value="borewell">Borewell / Tubewell</option>
+                <option value="well">Open well</option>
+                <option value="canal">Canal / River</option>
+                <option value="pond">Farm pond / Tank</option>
+                <option value="rain">Rainwater only</option>
+                <option value="mixed">Multiple sources</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="waterConservation">Do you practise water conservation?</label>
+              <select id="waterConservation" name="waterConservation">
+                <option value="">Select</option>
+                <option value="rainwater">Rainwater harvesting</option>
+                <option value="mulching">Mulching to reduce evaporation</option>
+                <option value="scheduling">Scheduled / sensor-based irrigation</option>
+                <option value="multiple">Multiple conservation practices</option>
+                <option value="none">No specific conservation measures</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="waterEfficiency">Have you adopted micro-irrigation (drip/sprinkler)?</label>
+              <select id="waterEfficiency" name="waterEfficiency">
+                <option value="">Select</option>
+                <option value="full">Yes, on entire farm</option>
+                <option value="partial">Yes, on part of the farm</option>
+                <option value="planned">Planning to adopt</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6: Soil Management -->
+        <div class="form-step" data-step="6">
+          <div class="form-step-header">
+            <h3>Step 6: Soil Management</h3>
+            <p>Share your soil health management practices.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="soilTesting">Have you done soil testing? <span class="req">*</span></label>
+              <select id="soilTesting" name="soilTesting" required>
+                <option value="">Select</option>
+                <option value="recent">Yes, within the last 2 years</option>
+                <option value="old">Yes, but more than 2 years ago</option>
+                <option value="never">Never done soil testing</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="soilHealthCard">Do you have a Soil Health Card?</label>
+              <select id="soilHealthCard" name="soilHealthCard">
+                <option value="">Select</option>
+                <option value="yes_recent">Yes, recent (within 2 years)</option>
+                <option value="yes_old">Yes, but it's old</option>
+                <option value="no">No</option>
+                <option value="applied">Applied but not received</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="composting">Do you practise composting?</label>
+              <select id="composting" name="composting">
+                <option value="">Select</option>
+                <option value="vermi">Vermicomposting</option>
+                <option value="regular">Regular composting (farm waste)</option>
+                <option value="nadep">NADEP composting</option>
+                <option value="no">No composting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mulching">Do you practise mulching?</label>
+              <select id="mulching" name="mulching">
+                <option value="">Select</option>
+                <option value="organic">Yes, organic mulch (straw, leaves)</option>
+                <option value="plastic">Yes, plastic mulch</option>
+                <option value="both">Both organic and plastic</option>
+                <option value="no">No mulching</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="erosionControl">Soil erosion control measures?</label>
+              <select id="erosionControl" name="erosionControl">
+                <option value="">Select</option>
+                <option value="terracing">Terracing / Bunding</option>
+                <option value="contour">Contour farming</option>
+                <option value="cover">Cover crops / Ground cover</option>
+                <option value="multiple">Multiple measures</option>
+                <option value="none">No specific measures</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="soilOrganic">Have you measured soil organic carbon?</label>
+              <select id="soilOrganic" name="soilOrganic">
+                <option value="">Select</option>
+                <option value="yes">Yes, it's in my soil report</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 7: Records & Documents -->
+        <div class="form-step" data-step="7">
+          <div class="form-step-header">
+            <h3>Step 7: Records &amp; Documentation</h3>
+            <p>Tell us about the records and documents you currently maintain.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label>Which of the following records/documents do you have?</label>
+              <div class="checkbox-grid">
+                <label class="check-label"><input type="checkbox" name="records" value="land_title"> Land title / ownership papers</label>
+                <label class="check-label"><input type="checkbox" name="records" value="land_map"> Land survey / map / khasra</label>
+                <label class="check-label"><input type="checkbox" name="records" value="crop_log"> Crop planting / harvest records</label>
+                <label class="check-label"><input type="checkbox" name="records" value="input_receipts"> Input purchase receipts</label>
+                <label class="check-label"><input type="checkbox" name="records" value="yield_records"> Yield / production records</label>
+                <label class="check-label"><input type="checkbox" name="records" value="soil_report"> Soil test reports</label>
+                <label class="check-label"><input type="checkbox" name="records" value="water_records"> Water usage records</label>
+                <label class="check-label"><input type="checkbox" name="records" value="bank_account"> Bank account linked to farm</label>
+                <label class="check-label"><input type="checkbox" name="records" value="aadhaar"> Aadhaar card</label>
+                <label class="check-label"><input type="checkbox" name="records" value="kcc"> Kisan Credit Card (KCC)</label>
+                <label class="check-label"><input type="checkbox" name="records" value="pm_kisan"> PM-KISAN registration</label>
+                <label class="check-label"><input type="checkbox" name="records" value="photos"> Farm photographs (recent)</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="digitalRecords">Do you maintain digital records?</label>
+              <select id="digitalRecords" name="digitalRecords">
+                <option value="">Select</option>
+                <option value="app">Yes, using a mobile app</option>
+                <option value="computer">Yes, on computer / spreadsheet</option>
+                <option value="paper">Paper records only</option>
+                <option value="none">No records maintained</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="govSchemes">Are you registered with any government agricultural scheme?</label>
+              <select id="govSchemes" name="govSchemes">
+                <option value="">Select</option>
+                <option value="multiple">Yes, multiple schemes</option>
+                <option value="one">Yes, one scheme</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label for="additionalInfo">Any additional information you'd like to share</label>
+              <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Optional: Share anything else about your farm or practices that might be relevant..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Navigation -->
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" id="prevBtn" style="visibility: hidden;">← Previous</button>
+          <div class="form-step-indicator" id="stepIndicatorText">Step 1 of 7</div>
+          <button type="button" class="btn btn-primary" id="nextBtn">Next Step →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS ========== -->
+  <section id="results" class="page-section">
+    <div class="container">
+      <div class="results-header">
+        <h2 class="section-title">Your Carbon Credit Readiness Report</h2>
+        <p class="section-subtitle">Based on the information you provided, here is your assessment.</p>
+      </div>
+
+      <!-- Score Card -->
+      <div class="score-section">
+        <div class="score-card">
+          <div class="score-circle-wrap">
+            <svg class="score-circle" viewBox="0 0 160 160">
+              <circle cx="80" cy="80" r="70" stroke="#e0e0e0" stroke-width="12" fill="none"/>
+              <circle cx="80" cy="80" r="70" stroke="#2e7d32" stroke-width="12" fill="none"
+                      stroke-dasharray="440" stroke-dashoffset="440" stroke-linecap="round"
+                      class="score-arc" id="scoreArc"
+                      transform="rotate(-90 80 80)"/>
+            </svg>
+            <div class="score-value" id="scoreValue">0</div>
+          </div>
+          <div class="score-label">out of 100</div>
+        </div>
+        <div class="score-details">
+          <div class="readiness-badge" id="readinessBadge">Calculating...</div>
+          <p class="readiness-desc" id="readinessDesc"></p>
+          <div class="score-breakdown" id="scoreBreakdown"></div>
+        </div>
+      </div>
+
+      <!-- Farm Dashboard (Real Farm Practices from PostgreSQL) -->
+      <div class="result-panel farm-dashboard-panel" id="farmDashboardPanel" style="margin-bottom: 24px;">
+        <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="panel-icon">🚜</span>
+            <h3 style="margin: 0;">Farm Dashboard — Verified Practices</h3>
+          </div>
+          <span id="dashFarmName" style="font-weight: 600; color: var(--green-700); font-size: 0.95rem;"></span>
+        </div>
+        <div class="evidence-audit-summary" style="margin-top: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          <div class="audit-stat-box" style="text-align: left; padding: 14px;">
+            <div class="stat-label" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: var(--gray-500); font-weight: 700;">Fertilizer Management</div>
+            <div class="stat-num" id="dashFertilizerManagement" style="font-size: 1.25rem; font-weight: 700; color: var(--green-900); margin-top: 4px;">—</div>
+          </div>
+          <div class="audit-stat-box" id="dashOrganicTypeBox" style="text-align: left; padding: 14px; display: none;">
+            <div class="stat-label" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: var(--gray-500); font-weight: 700;">Organic Fertilizer</div>
+            <div class="stat-num" id="dashOrganicFertilizer" style="font-size: 1.25rem; font-weight: 700; color: var(--green-700); margin-top: 4px;">—</div>
+          </div>
+          <div class="audit-stat-box" style="text-align: left; padding: 14px;">
+            <div class="stat-label" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: var(--gray-500); font-weight: 700;">Tillage Method</div>
+            <div class="stat-num" id="dashTillage" style="font-size: 1.05rem; font-weight: 600; color: var(--gray-900); margin-top: 4px;">—</div>
+          </div>
+          <div class="audit-stat-box" style="text-align: left; padding: 14px;">
+            <div class="stat-label" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: var(--gray-500); font-weight: 700;">Residue Management</div>
+            <div class="stat-num" id="dashResidue" style="font-size: 1.05rem; font-weight: 600; color: var(--gray-900); margin-top: 4px;">—</div>
+          </div>
+          <div class="audit-stat-box" style="text-align: left; padding: 14px;">
+            <div class="stat-label" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: var(--gray-500); font-weight: 700;">Irrigation Method</div>
+            <div class="stat-num" id="dashIrrigation" style="font-size: 1.05rem; font-weight: 600; color: var(--gray-900); margin-top: 4px;">—</div>
+          </div>
+        </div>
+
+        <!-- Practice Updater for Quick Recalculation Demo -->
+        <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--gray-200); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="font-size: 0.85rem; color: var(--gray-600);">
+            Update fertilizer practice to test dynamic assessment recalculation:
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select id="quickFertCategory" style="padding: 6px 12px; border: 1px solid var(--gray-300); border-radius: 6px; font-size: 0.85rem;">
+              <option value="ORGANIC">Organic</option>
+              <option value="SYNTHETIC">Synthetic</option>
+              <option value="INTEGRATED">Integrated</option>
+            </select>
+            <select id="quickOrganicType" style="padding: 6px 12px; border: 1px solid var(--gray-300); border-radius: 6px; font-size: 0.85rem;">
+              <option value="VERMICOMPOST">Vermicompost</option>
+              <option value="COMPOST">Compost</option>
+              <option value="FARMYARD_MANURE">Farmyard Manure (FYM)</option>
+              <option value="BIOFERTILIZER">Biofertilizer</option>
+              <option value="GREEN_MANURE">Green Manure</option>
+              <option value="OTHER">Other Organic Fertilizer</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-primary" id="updatePracticeBtn">Update &amp; Recalculate</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Results -->
+      <div class="results-grid">
+        <!-- Strengths -->
+        <div class="result-panel strengths-panel">
+          <div class="panel-header">
+            <span class="panel-icon">✅</span>
+            <h3>Strengths</h3>
+          </div>
+          <ul class="result-list" id="strengthsList"></ul>
+        </div>
+
+        <!-- Gaps -->
+        <div class="result-panel gaps-panel">
+          <div class="panel-header">
+            <span class="panel-icon">⚠️</span>
+            <h3>Missing / Gaps</h3>
+          </div>
+          <ul class="result-list" id="gapsList"></ul>
+        </div>
+
+        <!-- Improvements -->
+        <div class="result-panel improvements-panel">
+          <div class="panel-header">
+            <span class="panel-icon">📈</span>
+            <h3>Areas for Improvement</h3>
+          </div>
+          <ul class="result-list" id="improvementsList"></ul>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="result-panel steps-panel">
+          <div class="panel-header">
+            <span class="panel-icon">🎯</span>
+            <h3>Recommended Next Steps</h3>
+          </div>
+          <ol class="result-list numbered" id="nextStepsList"></ol>
+        </div>
+      </div>
+
+      <!-- Disclaimer & Actions -->
+      <div class="results-footer">
+        <div class="notice-box">
+          <div class="notice-icon">ℹ️</div>
+          <div class="notice-content">
+            <h3>Disclaimer</h3>
+            <p>This readiness score is an indicative assessment based on the information you provided. It does <strong>not</strong> constitute a guarantee of eligibility for any carbon credit program, nor does it promise any financial outcome. Actual eligibility depends on specific program requirements, verification processes, and regulatory frameworks.</p>
+          </div>
+        </div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="recalcAssessmentBtn">🔄 Recalculate Assessment</button>
+          <button class="btn btn-secondary" id="manageEvidenceBtn">📂 Evidence &amp; Documents</button>
+          <button class="btn btn-outline" id="printReport">Print Report</button>
+          <button class="btn btn-outline" id="retakeAssessment">Retake Assessment</button>
+        </div>
+
+        <!-- Assessment History Timeline -->
+        <div class="history-section" id="historySection">
+          <div class="panel-header" style="display: flex; align-items: center; gap: 8px;">
+            <span class="panel-icon">📊</span>
+            <h3>Assessment Version History</h3>
+          </div>
+          <p class="section-subtitle" style="text-align: left; margin: 4px 0 16px 0;">Track your farm's carbon readiness improvement across versions.</p>
+          <div class="history-list" id="historyList">
+            <p style="color: var(--gray-500); font-size: 0.9rem;">Complete your assessment to view historical versions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ADMIN PORTAL ========== -->
+  <section id="admin-section" class="page-section">
+    <div class="container">
+      <div class="results-header">
+        <h2 class="section-title">Program Administration Portal</h2>
+        <p class="section-subtitle">Real-time PostgreSQL analytics across registered farmers and readiness evaluations.</p>
+      </div>
+      <div class="evidence-audit-summary" style="margin-top: 24px;">
+        <div class="audit-stat-box">
+          <div class="stat-num" id="adminTotalFarmers">0</div>
+          <div class="stat-label">Total Farmers</div>
+        </div>
+        <div class="audit-stat-box">
+          <div class="stat-num" id="adminTotalFarms">0</div>
+          <div class="stat-label">Total Farms</div>
+        </div>
+        <div class="audit-stat-box">
+          <div class="stat-num" id="adminTotalAssessments">0</div>
+          <div class="stat-label">Assessments Run</div>
+        </div>
+        <div class="audit-stat-box">
+          <div class="stat-num" id="adminAvgScore">0</div>
+          <div class="stat-label">Avg Readiness Score</div>
+        </div>
+      </div>
+
+      <div class="results-grid" style="margin-top: 24px;">
+        <div class="result-panel">
+          <div class="panel-header">
+            <span class="panel-icon">📈</span>
+            <h3>Readiness Distribution</h3>
+          </div>
+          <div id="adminReadinessDist" style="padding: 12px 0;"></div>
+        </div>
+        <div class="result-panel">
+          <div class="panel-header">
+            <span class="panel-icon">⚠️</span>
+            <h3>Top Gaps Across Assessments</h3>
+          </div>
+          <ul class="result-list" id="adminTopGaps"></ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 36px;">
+        <h3>Registered Farmers</h3>
+        <div style="overflow-x: auto; margin-top: 12px;">
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>Farmer Name</th>
+                <th>Contact</th>
+                <th>State &amp; District</th>
+                <th>Farms</th>
+                <th>Joined</th>
+              </tr>
+            </thead>
+            <tbody id="adminFarmersTableBody">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--gray-500);">Loading farmer records...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="page-section">
+    <div class="container">
+      <h2 class="section-title">About KrishiCarbon</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><strong>KrishiCarbon</strong> is a readiness assessment platform designed to help Indian farmers understand how prepared they are to participate in carbon credit programs.</p>
+          <p>Carbon credit programs incentivize sustainable farming practices that reduce greenhouse gas emissions and improve soil carbon sequestration. However, participating in these programs often requires specific practices, documentation, and records that many farmers may not be aware of.</p>
+          <p>This platform bridges that gap by providing:</p>
+          <ul>
+            <li>A structured assessment of your current farming practices</li>
+            <li>Identification of strengths and gaps in readiness</li>
+            <li>Practical, actionable recommendations</li>
+            <li>Guidance on what records and documentation you need</li>
+          </ul>
+
+          <h3>What are Carbon Credits?</h3>
+          <p>Carbon credits are tradeable certificates representing the reduction or removal of one tonne of carbon dioxide (CO₂) equivalent from the atmosphere. Farmers can earn carbon credits by adopting practices that increase soil carbon, reduce emissions, or improve resource efficiency.</p>
+
+          <h3>Who is this for?</h3>
+          <p>This platform is designed for:</p>
+          <ul>
+            <li>Individual farmers looking to understand carbon credit programs</li>
+            <li>Farmer Producer Organizations (FPOs) assessing group readiness</li>
+            <li>Agricultural extension workers helping farmers prepare</li>
+            <li>NGOs and development organizations working with farming communities</li>
+          </ul>
+
+          <h3>Important Limitations</h3>
+          <div class="notice-box">
+            <div class="notice-icon">⚠️</div>
+            <div class="notice-content">
+              <p>This platform is a <strong>prototype readiness assessment tool</strong>. It does not issue carbon credits, verify farm practices, guarantee eligibility for any program, or promise financial returns. Always consult with authorized agencies and carbon credit program administrators for actual enrollment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="logo-name">KrishiCarbon</span>
+          <p>Farmer Carbon Credit Readiness Platform</p>
+          <p class="footer-note">A prototype assessment tool. Not affiliated with any government body.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home" data-section="home">Home</a>
+          <a href="#how-it-works" data-section="how-it-works">How It Works</a>
+          <a href="#assessment" data-section="assessment">Assessment</a>
+          <a href="#about" data-section="about">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="https://soilhealth.dac.gov.in/" target="_blank" rel="noopener">Soil Health Card Portal</a>
+          <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener">PM-KISAN</a>
+          <a href="https://agricoop.nic.in/" target="_blank" rel="noopener">Dept. of Agriculture</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KrishiCarbon — Prototype Assessment Platform. Not a government website.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AUTHENTICATION MODAL ========== -->
+  <div class="modal-overlay" id="authModal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="authModalTitle">Welcome to KrishiCarbon</h3>
+        <button class="modal-close-btn" id="closeAuthModalBtn" type="button">&times;</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" id="tabSignIn" type="button">Sign In</button>
+        <button class="modal-tab" id="tabRegister" type="button">Create Account</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-alert" id="authAlert"></div>
+
+        <!-- Sign In Form -->
+        <form id="signInForm">
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label for="loginEmail">Email Address <span class="req">*</span></label>
+            <input type="email" id="loginEmail" placeholder="e.g. farmer@example.com" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label for="loginPassword">Password <span class="req">*</span></label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" id="signInSubmitBtn">Sign In</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" style="display: none;">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="regName">Full Name <span class="req">*</span></label>
+            <input type="text" id="regName" placeholder="e.g. Ramesh Kumar" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="regPhone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="regPhone" placeholder="e.g. +91 98765 43210" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="regEmail">Email Address <span class="req">*</span></label>
+            <input type="email" id="regEmail" placeholder="e.g. farmer@example.com" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="regPassword">Password (min 6 characters) <span class="req">*</span></label>
+            <input type="password" id="regPassword" placeholder="Create a secure password" minlength="6" required>
+          </div>
+          <div class="form-grid" style="margin-bottom: 20px;">
+            <div class="form-group">
+              <label for="regState">State <span class="req">*</span></label>
+              <input type="text" id="regState" placeholder="e.g. Jharkhand" required>
+            </div>
+            <div class="form-group">
+              <label for="regDistrict">District <span class="req">*</span></label>
+              <input type="text" id="regDistrict" placeholder="e.g. Ranchi" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" id="registerSubmitBtn">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== EVIDENCE & DOCUMENTS MODAL ========== -->
+  <div class="modal-overlay" id="docsModal" style="display: none;">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>📂 Farm Evidence &amp; Verification Documents</h3>
+        <button class="modal-close-btn" id="closeDocsModalBtn" type="button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="evidence-audit-summary">
+          <div class="audit-stat-box">
+            <div class="stat-num" id="statExpected">5</div>
+            <div class="stat-label">Expected Types</div>
+          </div>
+          <div class="audit-stat-box">
+            <div class="stat-num" id="statUploaded">0</div>
+            <div class="stat-label">Uploaded</div>
+          </div>
+          <div class="audit-stat-box">
+            <div class="stat-num" id="statVerified">0</div>
+            <div class="stat-label">Verified</div>
+          </div>
+          <div class="audit-stat-box">
+            <div class="stat-num" id="statQuality">0%</div>
+            <div class="stat-label">Quality Score</div>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom: 8px;">Evidence Verification Checklist</h4>
+        <div style="overflow-x: auto; margin-bottom: 20px;">
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>Document Type</th>
+                <th>Status</th>
+                <th>Attached File</th>
+              </tr>
+            </thead>
+            <tbody id="docsTableBody">
+              <tr>
+                <td colspan="3" style="text-align: center; color: var(--gray-500);">No evidence uploaded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice-box" style="margin-bottom: 20px;">
+          <div class="notice-icon">ℹ️</div>
+          <div class="notice-content">
+            <h3>Verification Protocol</h3>
+            <p>Uploaded records substantiate your farming claims during audits. Documents are reviewed and verified by designated program auditors. Farmers cannot self-verify documents.</p>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom: 12px;">Upload New Supporting Evidence</h4>
+        <form id="uploadDocForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="docTypeSelect">Document Type <span class="req">*</span></label>
+              <select id="docTypeSelect" required>
+                <option value="LAND_DOCUMENT">Land Title / Satbara 7/12 / Lease</option>
+                <option value="SOIL_REPORT">Soil Health Card / Lab Carbon Analysis</option>
+                <option value="CROP_RECORD">Crop Sowing &amp; Mandi Harvest Records</option>
+                <option value="IRRIGATION_RECORD">Irrigation &amp; Water Logs</option>
+                <option value="FERTILIZER_RECORD">Input Purchase Invoices / Bills</option>
+                <option value="PRACTICE_PHOTO">Field Practice Geotagged Photo</option>
+                <option value="OTHER">Other Official Document</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="docFileInput">File (PDF, PNG, JPG - Max 10MB) <span class="req">*</span></label>
+              <input type="file" id="docFileInput" accept=".pdf,image/png,image/jpeg" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="uploadSubmitBtn" style="margin-top: 16px;">Upload Evidence</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notifications container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

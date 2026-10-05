@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Production build artifacts
+dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local storage and test uploads
+uploads/*
+!uploads/.gitkeep
+agricred-backend/uploads/*
+!agricred-backend/uploads/.gitkeep
+
+# System & IDE files
+.DS_Store
+*.log
+.vscode/
+.idea/
+.gemini/
+.agents/
+.claude/
+.cursor/
+.devin/
+
+# Archives
+*.zip
+*.tar.gz
