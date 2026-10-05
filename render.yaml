@@ -5,7 +5,7 @@ services:
   - type: web
     name: krishicarbon-backend
     runtime: node
-    rootDir: agricred-backend
+    rootDir: KrishiCarbon-backend
     plan: free
     buildCommand: npm install && npm run build && npx prisma migrate deploy
     startCommand: npm start
@@ -39,7 +39,7 @@ services:
   # =====================================================================
   - type: static
     name: krishicarbon-frontend
-    rootDir: KrishiCarbon
+    rootDir: KrishiCarbon-frontend
     plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist

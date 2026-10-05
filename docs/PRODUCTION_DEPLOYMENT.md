@@ -59,7 +59,7 @@ This document details the complete step-by-step production deployment procedure 
 2. Connect your Git repository (`https://github.com/rounak1434/KrishiCarbon.git`).
 3. Set the following configuration:
    - **Name**: `krishicarbon-backend`
-   - **Root Directory**: `agricred-backend`
+   - **Root Directory**: `KrishiCarbon-backend`
    - **Environment**: `Node`
    - **Build Command**: `npm install && npm run build && npx prisma migrate deploy`
    - **Start Command**: `npm start`
@@ -84,7 +84,7 @@ This document details the complete step-by-step production deployment procedure 
 2. Connect the same repository (`https://github.com/rounak1434/KrishiCarbon.git`).
 3. Set configuration:
    - **Name**: `krishicarbon-frontend`
-   - **Root Directory**: `KrishiCarbon`
+   - **Root Directory**: `KrishiCarbon-frontend`
    - **Build Command**: `npm install && npm run build`
    - **Publish Directory**: `dist`
 4. Under **Redirects/Rewrites**:
