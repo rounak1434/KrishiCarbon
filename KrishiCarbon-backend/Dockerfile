@@ -21,6 +21,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=5000
+ENV PATH="/app/node_modules/.bin:$PATH"
 
 # Install production dependencies only
 COPY package*.json ./
@@ -31,8 +32,11 @@ RUN npx prisma generate
 # Copy built application from builder
 COPY --from=builder /app/dist ./dist
 
-# Create uploads directory
-RUN mkdir -p uploads && chown -R node:node /app
+# Copy entrypoint script and set permissions
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
+    mkdir -p uploads && \
+    chown -R node:node /app
 
 USER node
 
@@ -41,4 +45,5 @@ EXPOSE 5000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:5000/health || exit 1
 
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node", "dist/server.js"]

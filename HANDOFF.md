@@ -146,23 +146,56 @@ Cloudinary (Document Storage)
 
 ---
 
-## 8. Known Issues & Limitations
+## 8. Docker Deployment Architecture & Render Fix
 
-- **P0 (Blocking)**: None.
-- **P1 (Important)**: None.
-- **P2 (Operational Context)**:
-  - Render Free Tier services spin down after 15 minutes of inactivity; initial cold start takes 30-50s.
-  - When connecting Supabase to Render, use the Supabase Transaction Pooler URL (`pgbouncer=true&connection_limit=1`) to avoid connection exhaustion on free tiers.
+### 8.1 Root Cause of Exit Code 127
+- **Symptom**: Render Docker deployment failed with `/bin/sh: npx prisma migrate deploy && npm start: not found` (exit status 127).
+- **Cause**: Overriding the Render Docker Command with `/bin/sh: npx prisma migrate deploy && npm start` caused the shell/container runtime to look for a literal binary named `"npx prisma migrate deploy && npm start"` rather than evaluating shell commands sequentially.
+- **Resolution**: Replaced fragile Render dashboard command overrides with an automated container entrypoint script (`docker-entrypoint.sh`) and Docker `ENTRYPOINT` mechanism that runs migrations before launching the Node server.
+
+### 8.2 Dockerfile & Entrypoint Changes
+- **`docker-entrypoint.sh`**:
+  - Sets `set -e` so migration failures abort container boot immediately, preventing the API from running against an unmigrated database.
+  - Runs `npx prisma migrate deploy` using the container's configured `DATABASE_URL` (Supabase PostgreSQL pooler).
+  - Uses `exec node dist/server.js` (or passes through container arguments via `exec "$@"`) to preserve POSIX signal handling.
+  - Preserved pure LF line endings (`\n`) for Alpine Linux compatibility.
+- **`Dockerfile`**:
+  - `ENV PATH="/app/node_modules/.bin:$PATH"` added to ensure local CLI binaries are immediately discoverable.
+  - `COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh` with executable permissions (`chmod +x`).
+  - Added `ENTRYPOINT ["docker-entrypoint.sh"]`.
+  - Maintained default `CMD ["node", "dist/server.js"]`.
+  - Ensures production dependencies include `@prisma/client` and `prisma` CLI.
+
+### 8.3 Render Configuration Instructions
+- **Service Type**: Render Docker Web Service (`krishicarbon`).
+- **Dockerfile Path**: `KrishiCarbon-backend/./Dockerfile`.
+- **Docker Build Context**: `KrishiCarbon-backend/.`.
+- **Docker Command**: **Leave EMPTY** (so Render invokes the image's default `ENTRYPOINT` and `CMD`).
+- **Environment Variables**:
+  - `DATABASE_URL`: Configured in Render dashboard (Supabase pooled PostgreSQL).
+  - `PORT`: Provided by Render (`5000`).
+  - `NODE_ENV`: `production`.
 
 ---
 
-## 9. Next Steps / Actions Required on User Side
+## 9. Build and Test Status
 
-1. **Supabase**: Create a Supabase project and obtain your pooled `DATABASE_URL`.
-2. **Cloudinary**: Create a free Cloudinary account and obtain Cloud Name, API Key, and API Secret.
-3. **Render Deployment**:
-   - Push to GitHub (`https://github.com/rounak1434/KrishiCarbon.git`).
-   - In Render, create Blueprint from repository using [`render.yaml`](file:///c:/Rounak/KrishiCarbon/render.yaml) OR create the Static Site and Web Service manually following [`docs/PRODUCTION_DEPLOYMENT.md`](file:///c:/Rounak/KrishiCarbon/docs/PRODUCTION_DEPLOYMENT.md).
-   - Enter your `DATABASE_URL` and Cloudinary credentials in the Render dashboard.
-4. **Post-Deployment Verification**:
-   - Run `PRODUCTION_API_URL=https://<your-backend>.onrender.com/api node scripts/production-smoke-test.mjs`.
+- **Backend Tests**: `npm test` in `KrishiCarbon-backend/` -> **81/81 Vitest tests PASSING** across 12 test suites.
+- **Backend Build**: `npm run build` in `KrishiCarbon-backend/` -> **PASSES** (`tsc` compiles clean with zero errors).
+- **Prisma Schema**: `npx prisma validate` in `KrishiCarbon-backend/` -> **VALID**.
+- **Prisma Client Generation**: `npx prisma generate` in `KrishiCarbon-backend/` -> **GENERATED**.
+- **Security & Integrity**: Zero credentials or `.env` files committed.
+
+---
+
+## 10. Post-Deployment Verification
+
+1. Once Render builds and deploys the new Docker image:
+   - `GET https://krishicarbon.onrender.com/health` returns HTTP 200 `status: "ok"`.
+   - `GET https://krishicarbon.onrender.com/ready` returns HTTP 200 `database: "connected"`.
+2. Run the production smoke test suite against Render:
+   ```bash
+   node scripts/production-smoke-test.mjs https://krishicarbon.onrender.com/api
+   ```
+3. Test the live Vercel frontend: `https://krishi-carbon.vercel.app`.
+
