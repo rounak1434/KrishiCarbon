@@ -3,7 +3,7 @@ services:
   # KrishiCarbon Backend Web Service (Node.js / Express / Prisma)
   # =====================================================================
   - type: web
-    name: krishicarbon-backend
+    name: krishicarbon
     runtime: node
     rootDir: KrishiCarbon-backend
     plan: free
