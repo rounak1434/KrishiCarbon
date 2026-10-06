@@ -500,8 +500,8 @@ KrishiCarbon is configured and prepared for one-click production deployment usin
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    KrishiCarbon Frontend                    │
-│            (Render Static Site: HTML5 / CSS / JS)           │
-│         https://krishicarbon-frontend.onrender.com          │
+│          (Vercel / Render Static Site: HTML5 / CSS / JS)    │
+│            https://krishicarbon.vercel.app                  │
 └──────────────────────────────┬──────────────────────────────┘
                                │ HTTPS / REST & Multipart
                                ▼

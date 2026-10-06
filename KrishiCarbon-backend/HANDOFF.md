@@ -28,7 +28,7 @@
 
 ```text
 Frontend:
-Render Static Site (KrishiCarbon-frontend/)
+Vercel / Render Static Site (KrishiCarbon-frontend/)
 ↓ HTTPS
 Backend:
 Render Web Service (KrishiCarbon-backend/)

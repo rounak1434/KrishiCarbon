@@ -1,16 +1,16 @@
 # KrishiCarbon — Production Deployment Guide
 
-This document details the complete step-by-step production deployment procedure for KrishiCarbon on **Render** (Frontend Static Site + Backend Web Service), **Supabase** (Managed PostgreSQL), and **Cloudinary** (Secure Document Storage).
+This document details the complete step-by-step production deployment procedure for KrishiCarbon on **Vercel** (Frontend SPA), **Render** (Backend Web Service), **Supabase** (Managed PostgreSQL), and **Cloudinary** (Secure Document Storage).
 
 ---
 
-## 1. System Architecture
+## 1. Target Production Architecture
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    KrishiCarbon Frontend                    │
-│            (Render Static Site: HTML5 / CSS / JS)           │
-│         https://krishicarbon-frontend.onrender.com          │
+│             (Vercel: Vite / HTML5 / CSS3 / Vanilla JS)      │
+│               https://krishicarbon.vercel.app               │
 └──────────────────────────────┬──────────────────────────────┘
                                │ HTTPS / JSON & Multipart
                                ▼
@@ -43,7 +43,11 @@ This document details the complete step-by-step production deployment procedure 
      ```text
      postgresql://postgres.[PROJECT_REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1
      ```
-   - For running migrations (`prisma migrate deploy`), use the Direct Connection (port `5432`).
+   - For running migrations (`prisma migrate deploy`), you can use either the direct connection or transaction pooler.
+4. Apply the database schema from local terminal (or via Render build):
+   ```bash
+   DATABASE_URL="<your-supabase-connection-string>" npx prisma migrate deploy
+   ```
 
 ### Step 2: Cloudinary Document Storage Setup
 1. Create an account at [cloudinary.com](https://cloudinary.com).
@@ -51,7 +55,6 @@ This document details the complete step-by-step production deployment procedure 
    - **Cloud Name** (`CLOUDINARY_CLOUD_NAME`)
    - **API Key** (`CLOUDINARY_API_KEY`)
    - **API Secret** (`CLOUDINARY_API_SECRET`)
-   - (Or the full `CLOUDINARY_URL`)
 3. Target folder name: `krishicarbon_documents`.
 
 ### Step 3: Render Backend Web Service Setup
@@ -71,7 +74,7 @@ This document details the complete step-by-step production deployment procedure 
    | `DATABASE_URL` | Your Supabase pooled connection string |
    | `JWT_SECRET` | 32+ character random string (Render can generate this) |
    | `JWT_EXPIRES_IN` | `7d` |
-   | `CORS_ORIGIN` | `https://krishicarbon-frontend.onrender.com` |
+   | `CORS_ORIGIN` | `https://krishicarbon.vercel.app` (or Vercel preview URLs) |
    | `STORAGE_PROVIDER` | `cloudinary` |
    | `CLOUDINARY_CLOUD_NAME`| Cloudinary Cloud Name |
    | `CLOUDINARY_API_KEY` | Cloudinary API Key |
@@ -79,26 +82,35 @@ This document details the complete step-by-step production deployment procedure 
    | `CLOUDINARY_FOLDER` | `krishicarbon_documents` |
    | `AI_API_KEY` | *(Optional)* Gemini / OpenAI API key |
 
-### Step 4: Render Frontend Static Site Setup
-1. In Render, click **New +** ➔ **Static Site**.
-2. Connect the same repository (`https://github.com/rounak1434/KrishiCarbon.git`).
-3. Set configuration:
-   - **Name**: `krishicarbon-frontend`
-   - **Root Directory**: `KrishiCarbon-frontend`
-   - **Build Command**: `npm install && npm run build`
-   - **Publish Directory**: `dist`
-4. Under **Redirects/Rewrites**:
-   - Add a rewrite: `/*` ➔ `/index.html` (Status: `Rewrite`) to support SPA client routing.
-5. In **Environment Variables**:
+### Step 4: Vercel Frontend Deployment Setup
+1. Log in to [vercel.com](https://vercel.com) and click **Add New...** ➔ **Project**.
+2. Import repository `rounak1434/KrishiCarbon`.
+3. In Project Configuration:
+   - **Root Directory**: Click "Edit" and choose `KrishiCarbon-frontend`.
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+4. Under **Environment Variables**, add:
    | Key | Value |
    |---|---|
    | `VITE_API_BASE_URL` | `https://krishicarbon-backend.onrender.com/api` |
+5. Click **Deploy**.
+
+### Step 5: Render Static Site Alternative
+If hosting the frontend on Render instead of Vercel:
+1. In Render, click **New +** ➔ **Static Site**.
+2. Set **Root Directory**: `KrishiCarbon-frontend`.
+3. **Build Command**: `npm install && npm run build`
+4. **Publish Directory**: `dist`
+5. Rewrite: `/*` ➔ `/index.html`
+6. Env: `VITE_API_BASE_URL=https://krishicarbon-backend.onrender.com/api`
 
 ---
 
 ## 3. Alternative: Deploy via Render Blueprint (`render.yaml`)
 
-The repository includes a ready-to-deploy [`render.yaml`](file:///c:/Rounak/RanchiHackathon/render.yaml) specification.
+The repository includes a ready-to-deploy [`render.yaml`](file:///c:/Rounak/KrishiCarbon/render.yaml) specification.
 1. In Render, select **New +** ➔ **Blueprint**.
 2. Connect repository: `https://github.com/rounak1434/KrishiCarbon.git`.
 3. Render reads `render.yaml` and provisions both services automatically.
@@ -143,7 +155,7 @@ The repository includes a ready-to-deploy [`render.yaml`](file:///c:/Rounak/Ranc
   {
     "status": "ok",
     "service": "krishicarbon-backend",
-    "timestamp": "2026-10-05T17:35:00.000Z"
+    "timestamp": "2026-10-06T00:30:00.000Z"
   }
   ```
 - **Database Readiness**: `GET /ready` (Unauthenticated)
@@ -151,7 +163,7 @@ The repository includes a ready-to-deploy [`render.yaml`](file:///c:/Rounak/Ranc
   {
     "status": "ready",
     "database": "connected",
-    "timestamp": "2026-10-05T17:35:00.000Z"
+    "timestamp": "2026-10-06T00:30:00.000Z"
   }
   ```
 
