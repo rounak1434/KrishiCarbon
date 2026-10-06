@@ -1,4 +1,4 @@
-# 🌾 KrishiCarbon
+# 🌾 FarmerChoice
 
 ### Farmer Carbon Credit Readiness Assessment Platform
 
@@ -25,7 +25,7 @@
 | **Hackathon** | MARTINOVATION 2026 |
 | **Team** | Team Omnira |
 | **Problem Statement** | Farmer Carbon Credit Readiness Assessment Platform |
-| **Official Product** | KrishiCarbon |
+| **Official Product** | FarmerChoice (formerly KrishiCarbon) |
 | **Primary Repository** | `https://github.com/rounak1434/KrishiCarbon.git` |
 
 ---
@@ -51,9 +51,9 @@ The hackathon problem statement mandates an end-to-end platform that:
 
 ## 💡 Our Solution
 
-**KrishiCarbon** is an end-to-end, data-driven readiness assessment platform built specifically to bridge the divide between agricultural field realities and carbon credit verification criteria.
+**FarmerChoice** is an end-to-end, data-driven readiness assessment platform built specifically to bridge the divide between agricultural field realities and carbon credit verification criteria.
 
-Rather than relying on vague estimates or black-box predictions, KrishiCarbon pairs a **100% deterministic, explainable scoring engine** with an **evidence management and audit pipeline**. Farmers input their agronomic profile and upload verifiable documentation, receiving an instant, transparent diagnostic of their preparedness.
+Rather than relying on vague estimates or black-box predictions, FarmerChoice pairs a **100% deterministic, explainable scoring engine** with an **evidence management and audit pipeline**. Farmers input their agronomic profile and upload verifiable documentation, receiving an instant, transparent diagnostic of their preparedness.
 
 ```text
 Farmer Onboarding & Auth
@@ -87,7 +87,7 @@ Practice Adoption & Document Upload ──► Non-Destructive Reassessment ─�
 
 > [!IMPORTANT]
 > **Prototype Assessment Model Notice**:
-> KrishiCarbon estimates preparedness based on configured agronomic parameters and verifiable documentary evidence. **KrishiCarbon does not issue, verify, or certify carbon credits**, nor does it guarantee credit registration. It is an objective diagnostic tool designed to help farmers qualify for established voluntary market registries.
+> FarmerChoice estimates preparedness based on configured agronomic parameters and verifiable documentary evidence. **FarmerChoice does not issue, verify, or certify carbon credits**, nor does it guarantee credit registration. It is an objective diagnostic tool designed to help farmers qualify for established voluntary market registries.
 
 ---
 
@@ -139,7 +139,7 @@ Practice Adoption & Document Upload ──► Non-Destructive Reassessment ─�
 
 ## 🧠 Assessment Engine
 
-The KrishiCarbon Assessment Engine is **deterministic, server-side, explainable, and database-driven**. It implements an algorithmic scoring model defined in `scoring.config.ts`.
+The FarmerChoice Assessment Engine is **deterministic, server-side, explainable, and database-driven**. It implements an algorithmic scoring model defined in `scoring.config.ts`.
 
 ### Category Weights
 
@@ -199,7 +199,7 @@ Nutrient management directly affects nitrous oxide ($\text{N}_2\text{O}$) emissi
 
 ## 📁 Evidence & Document System
 
-Verification standards require physical proof of claimed practices. KrishiCarbon features an evidence pipeline designed for strict data integrity:
+Verification standards require physical proof of claimed practices. FarmerChoice features an evidence pipeline designed for strict data integrity:
 
 ```text
 ┌──────────────┐     Multer (Memory/Disk)      ┌─────────────────────────────┐
@@ -230,7 +230,7 @@ Verification standards require physical proof of claimed practices. KrishiCarbon
 
 ## 🤖 AI / Intelligent Processing
 
-KrishiCarbon enforces a clear architectural boundary between deterministic calculations and optional AI services:
+FarmerChoice enforces a clear architectural boundary between deterministic calculations and optional AI services:
 
 ### 1. Deterministic Scoring Engine (Zero LLM Dependency)
 - The readiness score (0–100), category scores, strengths, gaps, and recommendations are **100% computed via deterministic TypeScript logic**.
@@ -247,7 +247,7 @@ KrishiCarbon enforces a clear architectural boundary between deterministic calcu
 ```mermaid
 flowchart TD
     subgraph Client["Frontend Client (Render Static Site / Vite)"]
-        UI["KrishiCarbon Single-Page App"]
+        UI["FarmerChoice Single-Page App"]
         AUTH_UI["Auth & Session Controller"]
         ASSESS_UI["Assessment & Progress UI"]
         DOC_UI["Document Upload & Evidence Audit"]
@@ -309,7 +309,7 @@ flowchart TD
 
 ### Data-Driven Architecture & Zero Runtime Mock Policy
 
-KrishiCarbon enforces strict data-integrity guarantees across the entire platform lifecycle:
+FarmerChoice enforces strict data-integrity guarantees across the entire platform lifecycle:
 - **Server-Side Assessment Authority**: The frontend client never computes scores, category weights, or readiness classifications. It serves exclusively as a presentation layer rendering verified data returned by the backend.
 - **Relational PostgreSQL Persistence**: All farmer profiles, farm parcels, agronomic practices, multi-season crop cycles, document metadata, assessment runs, category scores, and recommendations are persisted in PostgreSQL via Prisma ORM.
 - **Dynamic Recommendations**: Action items and guidance are dynamically derived from actual assessment deficiencies and weaknesses—not hardcoded static arrays.
@@ -491,7 +491,7 @@ The data architecture is managed via Prisma ORM targeting PostgreSQL:
 
 ## ☁️ Deployment Architecture
 
-KrishiCarbon is configured and prepared for one-click production deployment using Render, Supabase, and Cloudinary.
+FarmerChoice is configured and prepared for one-click production deployment using Render, Supabase, and Cloudinary.
 
 > [!NOTE]
 > **Deployment Status: Prepared for Deployment (Production Target)**
@@ -499,16 +499,16 @@ KrishiCarbon is configured and prepared for one-click production deployment usin
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                    KrishiCarbon Frontend                    │
+│                    FarmerChoice Frontend                    │
 │          (Vercel / Render Static Site: HTML5 / CSS / JS)    │
-│            https://krishicarbon.vercel.app                  │
+│            https://krishi-carbon.vercel.app                 │
 └──────────────────────────────┬──────────────────────────────┘
                                │ HTTPS / REST & Multipart
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    KrishiCarbon Backend                     │
+│                    FarmerChoice Backend                     │
 │               (Render Web Service: Node / Express)          │
-│            https://krishicarbon-backend.onrender.com        │
+│            https://krishicarbon.onrender.com                │
 └──────────────┬───────────────────────────────┬──────────────┘
                │                               │
                ▼                               ▼
@@ -651,7 +651,7 @@ npm run dev
 
 ## 🧪 Testing & Verification
 
-KrishiCarbon features an extensive automated test suite covering unit determinism, data-driven reactivity, boundary edge cases, authorization isolation, and live HTTP socket communication.
+FarmerChoice features an extensive automated test suite covering unit determinism, data-driven reactivity, boundary edge cases, authorization isolation, and live HTTP socket communication.
 
 ### Run Automated Tests
 
@@ -763,7 +763,7 @@ KrishiCarbon/
 
 ## ⚠️ Known Limitations & Scope
 
-- **Prototype Readiness Model**: KrishiCarbon is an assessment tool designed to evaluate preparedness for voluntary carbon credit methodologies. It is **not** an accredited carbon credit registry (e.g., Verra VCS, Gold Standard, Indian Carbon Market) and does not issue tradable carbon credits.
+- **Prototype Readiness Model**: FarmerChoice is an assessment tool designed to evaluate preparedness for voluntary carbon credit methodologies. It is **not** an accredited carbon credit registry (e.g., Verra VCS, Gold Standard, Indian Carbon Market) and does not issue tradable carbon credits.
 - **Render Free-Tier Cold Starts**: On free Render instances, the web service spins down after 15 minutes of inactivity; initial cold starts may require 30–50 seconds.
 - **Connection Pooling**: When deploying with Supabase free tier, using the transaction pooler (`?pgbouncer=true&connection_limit=1`) is recommended to avoid exceeding database connection limits.
 - **Manual Verification Fallback**: Without a configured `AI_API_KEY`, uploaded documents default to `REVIEW_REQUIRED` status, requiring an administrator to verify documents before full evidence points are credited.
@@ -789,4 +789,4 @@ Built with passion for **MARTINOVATION 2026**.
 
 ---
 
-*KrishiCarbon — Empowering farmers with transparent, data-driven readiness for sustainable carbon futures.*
+*FarmerChoice — Empowering farmers with transparent, data-driven readiness for sustainable carbon futures.*

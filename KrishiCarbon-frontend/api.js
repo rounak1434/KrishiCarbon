@@ -14,12 +14,14 @@ function getApiBaseUrl() {
 
 const API_BASE = getApiBaseUrl();
 
-const TOKEN_KEY = 'krishicarbon_token';
-const USER_KEY = 'krishicarbon_user';
+const TOKEN_KEY = 'farmerchoice_token';
+const USER_KEY = 'farmerchoice_user';
+const LEGACY_TOKEN_KEY = 'krishicarbon_token';
+const LEGACY_USER_KEY = 'krishicarbon_user';
 
 function getToken() {
   try {
-    return localStorage.getItem(TOKEN_KEY);
+    return localStorage.getItem(TOKEN_KEY) || localStorage.getItem(LEGACY_TOKEN_KEY);
   } catch (e) {
     return null;
   }
@@ -27,8 +29,15 @@ function getToken() {
 
 function setSession(token, user) {
   try {
-    if (token) localStorage.setItem(TOKEN_KEY, token);
-    if (user) localStorage.setItem(USER_KEY, JSON.stringify(user));
+    if (token) {
+      localStorage.setItem(TOKEN_KEY, token);
+      localStorage.setItem(LEGACY_TOKEN_KEY, token);
+    }
+    if (user) {
+      const userStr = JSON.stringify(user);
+      localStorage.setItem(USER_KEY, userStr);
+      localStorage.setItem(LEGACY_USER_KEY, userStr);
+    }
   } catch (e) {
     console.error('Failed to save session to localStorage', e);
   }
@@ -38,6 +47,8 @@ function clearSession() {
   try {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(LEGACY_TOKEN_KEY);
+    localStorage.removeItem(LEGACY_USER_KEY);
   } catch (e) {
     console.error('Failed to clear session', e);
   }
@@ -77,7 +88,7 @@ async function request(path, options = {}) {
     response = await fetch(url, fetchOptions);
   } catch (netErr) {
     console.error('Network error during fetch:', netErr);
-    throw new Error('Unable to connect to the KrishiCarbon backend. Please ensure the backend is running.');
+    throw new Error('Unable to connect to the FarmerChoice backend. Please ensure the backend is running.');
   }
 
   let data;

@@ -1,4 +1,4 @@
-# KrishiCarbon — Project Handoff & Developer Guide
+# FarmerChoice — Project Handoff & Developer Guide
 
 > **CRITICAL RULE FOR ALL DEVELOPERS AND AI AGENTS**:
 > This document is the **single source of truth for repository state between development sessions**.
@@ -9,7 +9,7 @@
 
 ## 1. Project Overview
 
-- **Official Product Name**: **KrishiCarbon**
+- **Official Product Name**: **FarmerChoice** (formerly KrishiCarbon)
 - **Hackathon**: **MARTINOVATION 2026**
 - **Team**: **Team Omnira**
 - **Problem Statement**: *Farmer Carbon Credit Readiness Assessment Platform* (24-Hour Hackathon Challenge)

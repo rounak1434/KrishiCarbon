@@ -6,7 +6,7 @@ const BASE_URL = process.env.BASE_URL || "http://localhost:5000";
 
 async function runVerification() {
   console.log(`\n======================================================`);
-  console.log(`🔍 AgriCred Live API Production Verification: ${BASE_URL}`);
+  console.log(`🔍 FarmerChoice Live API Production Verification: ${BASE_URL}`);
   console.log(`======================================================\n`);
 
   const results: Array<{ endpoint: string; method: string; status: number; passed: boolean; note?: string }> = [];

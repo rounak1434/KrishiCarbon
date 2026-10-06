@@ -75,7 +75,7 @@ describe("Live Express HTTP Integration Tests", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body.status).toBe("ok");
-    expect(body.service).toBe("krishicarbon-backend");
+    expect(body.service).toBe("farmerchoice-backend");
   });
 
   it("GET /ready - returns 200 and database connected", async () => {

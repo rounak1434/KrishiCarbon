@@ -1,10 +1,10 @@
 export const swaggerDocument = {
   openapi: "3.0.0",
   info: {
-    title: "KrishiCarbon API - Farmer Carbon Credit Readiness Assessment Platform",
+    title: "FarmerChoice API - Farmer Carbon Credit Readiness Assessment Platform",
     version: "1.0.0",
     description:
-      "Production-grade backend API for KrishiCarbon. Evaluates farmer carbon-credit readiness based on farming practices, land details, crop history, and verifiable evidence. Note: This assessment estimates preparedness based on a prototype assessment model and is not an official carbon-credit certification.",
+      "Production-grade backend API for FarmerChoice. Evaluates farmer carbon-credit readiness based on farming practices, land details, crop history, and verifiable evidence. Note: This assessment estimates preparedness based on a prototype assessment model and is not an official carbon-credit certification.",
   },
   servers: [
     {
@@ -40,8 +40,8 @@ export const swaggerDocument = {
         type: "object",
         required: ["email", "password"],
         properties: {
-          email: { type: "string", format: "email", example: "farmer.ramesh@agricred.demo" },
-          password: { type: "string", minLength: 6, example: "AgriCred#2026" },
+          email: { type: "string", format: "email", example: "farmer.ramesh@farmerchoice.demo" },
+          password: { type: "string", minLength: 6, example: "Password#2026" },
           role: { type: "string", enum: ["FARMER", "ADMIN"], default: "FARMER" },
           name: { type: "string", example: "Ramesh Patel" },
           phone: { type: "string", example: "+91 98765 43210" },
@@ -53,8 +53,8 @@ export const swaggerDocument = {
         type: "object",
         required: ["email", "password"],
         properties: {
-          email: { type: "string", format: "email", example: "farmer.ramesh@agricred.demo" },
-          password: { type: "string", example: "AgriCred#2026" },
+          email: { type: "string", format: "email", example: "farmer.ramesh@farmerchoice.demo" },
+          password: { type: "string", example: "Password#2026" },
         },
       },
       FarmRequest: {

@@ -9,7 +9,7 @@ async function verifyOrganicFertilizerE2E() {
   console.log("==================================================================");
 
   const timestamp = Date.now();
-  const newEmail = `farmer.organic.${timestamp}@test.krishicarbon.io`;
+  const newEmail = `farmer.organic.${timestamp}@test.farmerchoice.io`;
   const password = "Password#2026";
 
   // Step 1: Register brand-new farmer

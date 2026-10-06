@@ -5,11 +5,11 @@ const API_BASE = "http://localhost:5000/api";
 
 async function runTest() {
   console.log("==================================================================");
-  console.log("🚜 Testing AgriCred Full Flow with Brand-New Non-Seeded Farmer");
+  console.log("🚜 Testing FarmerChoice Full Flow with Brand-New Non-Seeded Farmer");
   console.log("==================================================================");
 
   const timestamp = Date.now();
-  const newEmail = `farmer.fresh.${timestamp}@test.agricred.io`;
+  const newEmail = `farmer.fresh.${timestamp}@test.farmerchoice.io`;
   const password = "Password#2026";
 
   // 1. Register brand-new farmer

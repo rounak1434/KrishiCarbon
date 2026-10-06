@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * KrishiCarbon — Production Smoke Test Suite
+ * FarmerChoice — Production Smoke Test Suite
  *
  * Usage:
  *   PRODUCTION_API_URL=https://krishicarbon-backend.onrender.com/api node scripts/production-smoke-test.mjs
@@ -13,7 +13,7 @@ const API_BASE = (process.argv[2] || process.env.PRODUCTION_API_URL || process.e
 const ROOT_BASE = API_BASE.replace(/\/api$/, "");
 
 console.log("==================================================================");
-console.log("🚀 KrishiCarbon Production Smoke Test Suite");
+console.log("🚀 FarmerChoice Production Smoke Test Suite");
 console.log(`📡 Target API Endpoint:  ${API_BASE}`);
 console.log(`🏥 Health Check Base:    ${ROOT_BASE}`);
 console.log("==================================================================\n");
@@ -144,7 +144,7 @@ async function run() {
     // 8. Upload Document to Storage Provider
     console.log("\n5. Testing Document Storage Abstraction...");
     const boundary = "----WebKitFormBoundarySmokeTest7MA4YWxkTrZu0gW";
-    const dummyPdfContent = "%PDF-1.4\n%KrishiCarbon Smoke Test Evidence\n%%EOF";
+    const dummyPdfContent = "%PDF-1.4\n%FarmerChoice Smoke Test Evidence\n%%EOF";
     const formData = new FormData();
     formData.append("farmId", farmId);
     formData.append("type", "SOIL_REPORT");
@@ -226,9 +226,9 @@ async function run() {
   // Summary
   console.log("\n==================================================================");
   if (failedCount === 0) {
-    console.log(`🎉 PRODUCTION SMOKE TEST PASSED! (${passedCount}/${passedCount} checks successful)`);
+    console.log(`🎉 FarmerChoice PRODUCTION SMOKE TEST PASSED! (${passedCount}/${passedCount} checks successful)`);
   } else {
-    console.error(`❌ PRODUCTION SMOKE TEST FAILED: ${failedCount} failures out of ${passedCount + failedCount} checks.`);
+    console.error(`❌ FarmerChoice PRODUCTION SMOKE TEST FAILED: ${failedCount} failures out of ${passedCount + failedCount} checks.`);
   }
   console.log("==================================================================\n");
 

@@ -1,4 +1,4 @@
-// ===== KrishiCarbon — App Logic & Backend Integration =====
+// ===== FarmerChoice — App Logic & Backend Integration =====
 
 import { api } from './api.js';
 
@@ -560,7 +560,7 @@ import { api } from './api.js';
 
       // 3. Create Farm in Backend
       const farmPayload = {
-        name: d.farmName || 'Krishi Carbon Farm',
+        name: d.farmName || 'FarmerChoice Agro Parcel',
         areaAcres: areaInAcres,
         soilType,
         irrigationMethod,
@@ -673,7 +673,7 @@ import { api } from './api.js';
     // Readiness description / disclaimer
     const descEl = document.getElementById('readinessDesc');
     if (descEl) {
-      descEl.textContent = assessment.disclaimer || 'Assessment calculated by KrishiCarbon deterministic scoring engine based on verified farm practices, crop diversity, and documented evidence.';
+      descEl.textContent = assessment.disclaimer || 'Assessment calculated by FarmerChoice deterministic scoring engine based on verified farm practices, crop diversity, and documented evidence.';
     }
 
     // Score breakdown (from backend category scores)
@@ -763,7 +763,7 @@ import { api } from './api.js';
     }
 
     // Strengths
-    populateList('strengthsList', assessment.strengths?.length > 0 ? assessment.strengths : ['Farm data documented in the KrishiCarbon registry.']);
+    populateList('strengthsList', assessment.strengths?.length > 0 ? assessment.strengths : ['Farm data documented in the FarmerChoice registry.']);
 
     // Gaps
     populateList('gapsList', assessment.gaps?.length > 0 ? assessment.gaps : ['No critical practices penalized in the assessment.']);

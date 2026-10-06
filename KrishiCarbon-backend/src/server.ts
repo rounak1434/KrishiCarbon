@@ -10,7 +10,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : (env.PORT || 50
 const HOST = "0.0.0.0";
 
 const server = app.listen(PORT, HOST, () => {
-  logger.info(`🚀 KrishiCarbon Backend Server started on port ${PORT} (binding: ${HOST})`, {
+  logger.info(`🚀 FarmerChoice Backend Server started on port ${PORT} (binding: ${HOST})`, {
     environment: env.NODE_ENV,
     healthEndpoint: `http://${HOST}:${PORT}/health`,
     readinessEndpoint: `http://${HOST}:${PORT}/ready`,
@@ -19,7 +19,7 @@ const server = app.listen(PORT, HOST, () => {
 });
 
 async function gracefulShutdown(signal: string) {
-  logger.info(`Received ${signal}. Gracefully shutting down KrishiCarbon server...`);
+  logger.info(`Received ${signal}. Gracefully shutting down FarmerChoice server...`);
   server.close(async () => {
     await prisma.$disconnect();
     logger.info("Database connection closed. Exiting process.");

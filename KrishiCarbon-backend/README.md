@@ -1,4 +1,4 @@
-# AgriCred Backend - Farmer Carbon Credit Readiness Assessment Platform
+# FarmerChoice Backend - Farmer Carbon Credit Readiness Assessment Platform
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20.x-green.svg)](https://nodejs.org/)
@@ -7,11 +7,11 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-blue.svg)](https://www.postgresql.org/)
 [![Vitest](https://img.shields.io/badge/Vitest-5.x-yellow.svg)](https://vitest.dev/)
 
-AgriCred is an assessment platform engineered for hackathon evaluation and production readiness. It quantitatively evaluates a farm's readiness to participate in carbon-credit verification programs based on soil management practices, conservation tillage, residue retention, irrigation methods, crop history, and documentary evidence.
+FarmerChoice is an assessment platform engineered for hackathon evaluation and production readiness. It quantitatively evaluates a farm's readiness to participate in carbon-credit verification programs based on soil management practices, conservation tillage, residue retention, irrigation methods, crop history, and documentary evidence.
 
 > [!IMPORTANT]
 > **Prototype Assessment Model Notice**:
-> AgriCred calculates an internal readiness score (*High Readiness*, *Moderate Readiness*, *Needs Improvement*) based on configured agronomic parameters and verifiable documentary evidence. This platform estimates preparedness and does **not** falsely claim to be an official carbon-credit certification or guaranteed credit issuance.
+> FarmerChoice calculates an internal readiness score (*High Readiness*, *Moderate Readiness*, *Needs Improvement*) based on configured agronomic parameters and verifiable documentary evidence. This platform estimates preparedness and does **not** falsely claim to be an official carbon-credit certification or guaranteed credit issuance.
 
 ---
 
@@ -53,7 +53,7 @@ AgriCred is an assessment platform engineered for hackathon evaluation and produ
 
 ## 🏗️ Architecture
 
-AgriCred strictly adheres to modular layered architecture:
+FarmerChoice strictly adheres to modular layered architecture:
 
 ```
 src/
@@ -280,11 +280,11 @@ Build and run using Docker:
 
 ```bash
 # Build multi-stage image
-docker build -t agricred-backend .
+docker build -t farmerchoice-backend .
 
 # Run container
 docker run -p 5000:5000 \
   -e DATABASE_URL="postgresql://user:password@host:5432/agricred" \
   -e JWT_SECRET="your_secure_jwt_secret_key_minimum_16_characters" \
-  agricred-backend
+  farmerchoice-backend
 ```

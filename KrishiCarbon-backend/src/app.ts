@@ -81,7 +81,7 @@ app.use("/uploads", express.static(env.STORAGE_PATH));
 app.get("/health", (_req: Request, res: Response) => {
   res.status(200).json({
     status: "ok",
-    service: "krishicarbon-backend",
+    service: "farmerchoice-backend",
     timestamp: new Date().toISOString(),
   });
 });

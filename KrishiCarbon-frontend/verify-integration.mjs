@@ -1,4 +1,4 @@
-// ===== KrishiCarbon Direct HTTP Integration Verification =====
+// ===== FarmerChoice Direct HTTP Integration Verification =====
 
 import fs from 'fs';
 import path from 'path';
@@ -10,8 +10,8 @@ const timestamp = Date.now();
 const testUser = {
   name: `Ramesh Verma ${timestamp}`,
   phone: `+91 99${String(timestamp).slice(-8)}`,
-  email: `farmer.ramesh.${timestamp}@krishicarbon.test`,
-  password: 'KrishiCarbon#2026',
+  email: `farmer.ramesh.${timestamp}@farmerchoice.test`,
+  password: 'FarmerChoice#2026',
   state: 'Jharkhand',
   district: 'Ranchi',
 };
@@ -42,7 +42,7 @@ function assert(condition, message) {
 
 async function run() {
   console.log('===============================================================');
-  console.log('🚀 KrishiCarbon Backend Integration Verification (Direct HTTP)');
+  console.log('🚀 FarmerChoice Backend Integration Verification (Direct HTTP)');
   console.log(`Target API Base: ${API_BASE}`);
   console.log('===============================================================');
 
@@ -334,7 +334,7 @@ async function run() {
 
   console.log('\n===============================================================');
   console.log('🎉 ALL INTEGRATION TESTS PASSED SUCCESSFULLY! (14/14 steps)');
-  console.log('KrishiCarbon frontend API contracts are 100% verified against');
+  console.log('FarmerChoice frontend API contracts are 100% verified against');
   console.log('the real PostgreSQL-backed backend server.');
   console.log('===============================================================');
 }

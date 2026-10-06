@@ -1,4 +1,4 @@
-# Multi-stage Docker build for KrishiCarbon Backend
+# Multi-stage Docker build for FarmerChoice Backend
 FROM node:20-alpine AS builder
 
 WORKDIR /app

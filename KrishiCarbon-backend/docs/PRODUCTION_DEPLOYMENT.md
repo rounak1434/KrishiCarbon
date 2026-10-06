@@ -1,6 +1,6 @@
-# KrishiCarbon — Production Deployment Guide
+# FarmerChoice — Production Deployment Guide
 
-This document details the complete step-by-step production deployment procedure for KrishiCarbon on **Vercel** (Frontend SPA), **Render** (Backend Web Service), **Supabase** (Managed PostgreSQL), and **Cloudinary** (Secure Document Storage).
+This document details the complete step-by-step production deployment procedure for FarmerChoice on **Vercel** (Frontend SPA), **Render** (Backend Web Service), **Supabase** (Managed PostgreSQL), and **Cloudinary** (Secure Document Storage).
 
 ---
 
@@ -8,16 +8,16 @@ This document details the complete step-by-step production deployment procedure 
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                    KrishiCarbon Frontend                    │
+│                    FarmerChoice Frontend                    │
 │             (Vercel: Vite / HTML5 / CSS3 / Vanilla JS)      │
-│               https://krishicarbon.vercel.app               │
+│               https://krishi-carbon.vercel.app              │
 └──────────────────────────────┬──────────────────────────────┘
                                │ HTTPS / JSON & Multipart
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    KrishiCarbon Backend                     │
+│                    FarmerChoice Backend                     │
 │               (Render Web Service: Node / Express)          │
-│            https://krishicarbon-backend.onrender.com        │
+│            https://krishicarbon.onrender.com                │
 └──────────────┬───────────────────────────────┬──────────────┘
                │                               │
                ▼                               ▼

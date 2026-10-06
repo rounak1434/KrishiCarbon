@@ -1,4 +1,4 @@
-# AgriCred API Contract — Frontend Integration Guide
+# FarmerChoice API Contract — Frontend Integration Guide
 
 This document is the official API contract for the frontend application. It specifies exact endpoints, authentication requirements, request payloads, and standard response formats.
 
@@ -40,10 +40,10 @@ Authorization: Bearer <your_jwt_token>
 ```
 
 ### Demo Accounts for Testing
-- **Admin**: `admin@agricred.demo` / `Admin#2026`
-- **Low-Readiness Farmer**: `farmer.suresh@agricred.demo` / `AgriCred#2026` (Score ~23)
-- **Moderate-Readiness Farmer**: `farmer.anil@agricred.demo` / `AgriCred#2026` (Score ~74)
-- **High-Readiness Farmer**: `farmer.lakshmi@agricred.demo` / `AgriCred#2026` (Score ~99)
+- **Admin**: `admin@farmerchoice.demo` / `Admin#2026`
+- **Low-Readiness Farmer**: `farmer.suresh@farmerchoice.demo` / `Password#2026` (Score ~23)
+- **Moderate-Readiness Farmer**: `farmer.anil@farmerchoice.demo` / `Password#2026` (Score ~74)
+- **High-Readiness Farmer**: `farmer.lakshmi@farmerchoice.demo` / `Password#2026` (Score ~99)
 
 ---
 
@@ -56,8 +56,8 @@ Authorization: Bearer <your_jwt_token>
 #### Request Body
 ```json
 {
-  "email": "farmer.lakshmi@agricred.demo",
-  "password": "AgriCred#2026"
+  "email": "farmer.lakshmi@farmerchoice.demo",
+  "password": "Password#2026"
 }
 ```
 

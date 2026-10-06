@@ -5,9 +5,9 @@ echo "==> Deploying Prisma production database migrations..."
 npx prisma migrate deploy
 
 if [ $# -eq 0 ]; then
-  echo "==> Starting KrishiCarbon backend application (node dist/server.js)..."
+  echo "==> Starting FarmerChoice backend application (node dist/server.js)..."
   exec node dist/server.js
 else
-  echo "==> Starting KrishiCarbon backend application ($@)..."
+  echo "==> Starting FarmerChoice backend application ($@)..."
   exec "$@"
 fi

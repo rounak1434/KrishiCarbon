@@ -1,6 +1,6 @@
 services:
   # =====================================================================
-  # KrishiCarbon Backend Web Service (Node.js / Express / Prisma)
+  # FarmerChoice Backend Web Service (Node.js / Express / Prisma)
   # =====================================================================
   - type: web
     name: krishicarbon
@@ -35,7 +35,7 @@ services:
         sync: false # Optional Gemini / OpenAI API key
 
   # =====================================================================
-  # KrishiCarbon Frontend Static Site (HTML5 / CSS / Vanilla JS / Vite)
+  # FarmerChoice Frontend Static Site (HTML5 / CSS / Vanilla JS / Vite)
   # =====================================================================
   - type: static
     name: krishicarbon-frontend

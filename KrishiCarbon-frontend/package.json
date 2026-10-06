@@ -1,5 +1,6 @@
 {
-  "name": "krishicarbon-frontend",
+  "name": "farmerchoice-frontend",
+  "description": "FarmerChoice — Farmer Carbon Credit Readiness Assessment Platform Frontend",
   "version": "1.0.0",
   "private": true,
   "type": "module",
