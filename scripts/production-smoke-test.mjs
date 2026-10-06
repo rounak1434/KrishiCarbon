@@ -9,7 +9,7 @@
  *   node scripts/production-smoke-test.mjs (defaults to http://localhost:5000/api)
  */
 
-const API_BASE = (process.env.PRODUCTION_API_URL || process.env.API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE = (process.argv[2] || process.env.PRODUCTION_API_URL || process.env.API_URL || "http://localhost:5000/api").trim().replace(/\/$/, "");
 const ROOT_BASE = API_BASE.replace(/\/api$/, "");
 
 console.log("==================================================================");
